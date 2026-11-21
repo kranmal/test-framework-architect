@@ -49,7 +49,7 @@ Read `references/phases.md` for the full spec of each phase and `references/stac
 
 Phase 5 is split into 7 sub-steps (config, base fixtures, base page object, two page objects, data layer, reporting, logging). Confirm between each sub-step.
 
-In Phase 6, after each test, ask: "Does this match how you'd actually test this flow? What's missing?"
+In Phase 6, after each test, ask: "Does this match how you'd actually test this flow? What's missing?" After the third test, run the failure-artifact check described in `references/phases.md` (a temporary deliberate failing test, removed afterwards) before moving to Phase 7.
 
 ### Output format
 

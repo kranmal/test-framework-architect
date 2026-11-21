@@ -32,6 +32,13 @@ Wire auth per the user's Q15 answer (session reuse, token, or mock).
 ## Phase 6: First test scripts
 Write 3 tests: one smoke (single happy path, 3-5 steps), one data-driven (3+ data sets), one negative/edge case. Rules: one assertion per test (max 3 tightly related), no hardcoded values (config or data files), explicit waits only, accessible locators (role, label, text) before CSS/XPath, descriptive sentence-style names. Run each test if the environment allows. After each, ask: "Does this match how you'd actually test this flow? What's missing?"
 
+**Failure-artifact check (after the 3 tests pass, before Phase 7):** prove the failure path works, because a passing suite never exercises it. Tell the user you're doing this, then:
+1. Add a temporary spec with one test that fails on purpose (for example expect a value that is certainly wrong). Name it so it cannot be mistaken for a real test, for example `zz-deliberate-failure.spec`, and tag it so it is easy to remove.
+2. Run it alone and confirm: a non-zero exit code; a screenshot and a trace exist under the output folder; the JUnit XML has a `<failure>` entry and a non-zero `failures` count; the HTML report was generated. Open the screenshot and confirm it shows the real failure state.
+3. Confirm the CI config uploads the artifact folders even on failure (`if: always()` or the platform equivalent).
+4. Delete the temporary spec and its output, re-run the full suite, and confirm it passes and that passing tests leave no failure artifacts.
+Report what you saw, including anything you could not verify (for example the CI upload, which needs a real run). Never leave the failing test in the repo.
+
 Lessons from the dry run (apply when generating code):
 - Run `tsc --noEmit` (or the language's type/lint check) and the tests themselves before presenting; show the real pass/fail output.
 - Data-driven test titles are built from a data field; write the data names so the sentence reads naturally (for example avoid "with with digits").
