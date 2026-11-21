@@ -1,0 +1,11 @@
+{
+  "name": "test-framework-architect",
+  "owner": { "name": "Ketan Ranmal" },
+  "plugins": [
+    {
+      "name": "test-framework-architect",
+      "source": "./",
+      "description": "Guided, approval-gated skill that helps you design and build a production-grade test automation framework in 8 phases."
+    }
+  ]
+}

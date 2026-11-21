@@ -20,10 +20,11 @@ Authentication is a first-class choice: real UI login, token login, SSO/MFA test
 
 ## Install
 
-As a plugin (from a clone of this repo):
+As a plugin:
 
 ```bash
-claude plugin marketplace add ./test-framework-architect
+claude plugin marketplace add kranmal/test-framework-architect
+claude plugin install test-framework-architect@test-framework-architect
 ```
 
 Or as a plain skill, copy the skill folder:
@@ -33,7 +34,7 @@ mkdir -p ~/.claude/skills
 cp -R skills/test-framework-architect ~/.claude/skills/
 ```
 
-Use `.claude/skills/` inside a project to scope it to that repo. Plugin install commands vary by Claude Code version; if the first command isn't recognised, use the copy method.
+Use `.claude/skills/` inside a project to scope it to that repo.
 
 ## Use
 
