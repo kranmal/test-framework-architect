@@ -13,6 +13,17 @@ Defaults for Phase 2. Verify current versions and docs before pinning; do not re
 
 Selenium is preferred only when the user needs a mandated grid, legacy browser support, or has an existing Selenium investment.
 
+### Additional web stacks
+
+| Stack | Use when | Trade-off |
+|---|---|---|
+| Cypress (TypeScript) | Front-end team owns the tests and wants the interactive runner and time-travel debugging | Single-origin focus, no real multi-tab, fewer browsers, parallelism needs Cypress Cloud or a third-party tool |
+| Robot Framework (+ Browser library, which wraps Playwright) | Non-coding testers write keyword-style scenarios, or the org already standardises on Robot | Keyword layer adds maintenance cost; custom logic needs Python libraries; slower to debug than native code |
+| Kotlin (Playwright for Java + JUnit 5, or Selenium + JUnit 5) | JVM shop that prefers Kotlin; reuses the Java bindings | Smaller community examples; the Playwright Java API is used through Kotlin, so docs are in Java |
+| Ruby (Capybara + RSpec) | Existing Rails or Ruby team | Slower and less actively developed for modern browser features than Playwright |
+
+For Robot Framework and Kotlin, still map every Phase 5 sub-step (config, fixtures or setup/teardown, base page, data, reporting, logging) onto the stack's native equivalents, and tell the user where the mapping is loose. Robot produces `output.xml`, `log.html` and `report.html`; convert or configure JUnit XML output (`--xunit`) so CI treats results the same way. Verify failure artifacts per the Phase 6 failure-artifact check.
+
 ## API
 | Language | Recommended | Alternative |
 |---|---|---|
@@ -20,6 +31,9 @@ Selenium is preferred only when the user needs a mandated grid, legacy browser s
 | Python | requests/httpx + pytest | Playwright API |
 | Java | RestAssured | Playwright API |
 | C# | RestSharp or HttpClient | Playwright API |
+| Kotlin | RestAssured (Kotlin extensions) | Ktor client |
+| Robot Framework | RESTinstance or RequestsLibrary | Browser library's HTTP keywords |
+
 GraphQL: same clients with query helpers; add schema or contract checks if a schema is available.
 
 ## Mobile (separate package, later phase)

@@ -1,7 +1,14 @@
 {
   "name": "test-framework-architect",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "description": "Guided, approval-gated skill that helps you design and build a production-grade test automation framework in 8 phases.",
+  "author": {
+    "name": "Ketan Ranmal",
+    "url": "https://github.com/kranmal"
+  },
+  "homepage": "https://github.com/kranmal/test-framework-architect",
+  "repository": "https://github.com/kranmal/test-framework-architect",
   "license": "MIT",
-  "keywords": ["testing", "test-automation", "playwright", "selenium", "pytest", "ci", "skill"]
+  "icon": "./.claude-plugin/icon.png",
+  "keywords": ["testing", "test-automation", "playwright", "selenium", "pytest", "cypress", "ci", "skill"]
 }
