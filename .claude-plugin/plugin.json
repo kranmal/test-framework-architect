@@ -1,6 +1,6 @@
 {
   "name": "test-framework-architect",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Guided, approval-gated skill that helps you design and build a production-grade test automation framework in 8 phases.",
   "license": "MIT",
   "keywords": ["testing", "test-automation", "playwright", "selenium", "pytest", "ci", "skill"]
