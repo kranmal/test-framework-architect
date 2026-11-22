@@ -64,10 +64,10 @@ Rules for this step:
 
 ### Step 0c: Get the application under test running (web, desktop, or an API you will call)
 
-Before Phase 5 builds anything that touches the app, confirm the user can reach it, and say how you checked.
+**When:** run this at the start of Phase 5, right after the Phase 4 approval and before sub-step 1. It is not part of intake. Confirm the user can reach the app, and say how you checked.
 
 1. Ask for the URL, or the command that starts it locally. If the app is a static page or a file, ask for its folder or path.
-2. Check it responds (an HTTP request, or opening the file). Report the real result; never assume it is up.
+2. Check it responds (an HTTP request, or opening the file). Report the real result; never assume it is up. Prefer a non-production target. Use only read-only requests (GET or HEAD) for this check, never writes, and warn the user before pointing tests at a production system.
 3. If it is not reachable, offer: the user starts it, a local copy of the files served by a simple static server, or building against a public sample target. Fetching or downloading anything from the network needs the user's explicit yes, naming the source.
 4. Record the base URL and how to start the app in `docs/decisions.md`. Static apps need no deployed environment: note that, because Phase 7 adapts to it.
 

@@ -27,7 +27,7 @@ Generate the full tree with a one-line comment per folder and key file. Include 
 5. **Data management**: CSV/JSON/DB loading, factories, fixtures for test isolation.
 6. **Reporting**: JUnit XML plus HTML report configuration.
 7. **Logging**: structured, with timestamps, test name, step-level detail.
-Before sub-step 4 make sure Step 0c is done: the app must be reachable. Wire auth per the user's Q15 answer (session reuse, token, or mock).
+Start Phase 5 by running Step 0c from `SKILL.md` (confirm the app is reachable) before sub-step 1. Wire auth per the user's Q15 answer (session reuse, token, or mock).
 
 ## Phase 6: First test scripts
 Write 3 tests: one smoke (single happy path, 3-5 steps), one data-driven (3+ data sets), one negative/edge case. Rules: one assertion per test (max 3 tightly related), no hardcoded values (config or data files), explicit waits only, accessible locators (role, label, text) before CSS/XPath, descriptive sentence-style names. Run each test if the environment allows. After each, ask: "Does this match how you'd actually test this flow? What's missing?"

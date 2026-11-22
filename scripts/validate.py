@@ -59,6 +59,12 @@ for ref in sorted(set(re.findall(r"references/[\w.\-]+", skill))):
     if not (skill_dir / ref).is_file():
         fail(f"SKILL.md references missing file: {ref}")
 
+for step in ("### Step 0b:", "### Step 0c:"):
+    if step not in skill:
+        fail(f"SKILL.md: missing '{step}' section")
+if "Step 0c" not in (skill_dir / "references" / "phases.md").read_text():
+    fail("phases.md: Phase 5 must reference Step 0c")
+
 # Every phase handoff line must be present in the phase spec
 phases = (skill_dir / "references" / "phases.md").read_text()
 if "Ready to move to Phase N+1? Or would you like to adjust anything?" not in phases:
