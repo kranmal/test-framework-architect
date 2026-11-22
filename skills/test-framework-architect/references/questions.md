@@ -33,10 +33,10 @@ Defaults apply when the user says "not sure" / "recommend". Always flag them REV
 - Default: GitHub Actions if the repo is on GitHub, GitLab CI if on GitLab.
 - Ask hosted vs self-hosted runners as a follow-up only if relevant to browser install.
 
+## Group 3: Integrations and constraints
+
 **Q9. Integrations** (multi-select): Jira / Zephyr Scale / TestRail / Slack or Teams notifications / Allure or dashboard / None
 - Default: None; JUnit XML keeps the door open for all of them.
-
-## Group 3: Constraints and preferences
 
 **Q10. Compliance and security**: None special / Synthetic data only (GDPR/PII) / No cloud services / SOC 2 or audit trail / Secrets from a vault
 - Multi-select allowed. Default: none special, but secrets always via environment variables.
@@ -47,13 +47,13 @@ Defaults apply when the user says "not sure" / "recommend". Always flag them REV
 **Q12. Parallel execution**: None / 2-4 workers / 5-10 workers or CI sharding / Grid or cloud (Selenium Grid, BrowserStack, Sauce Labs)
 - Default: 2-4 workers.
 
+## Group 4: Standards, delivery and authentication
+
 **Q13. Existing standards**: None / BDD-Gherkin required / Existing style guide or linter / Mandated tool
 - If a mandated tool or style guide exists, ask the user to name it or point to the file.
 
 **Q14. First delivery target**: 1 week / 2 weeks / 4 weeks / 6+ weeks
 - Default: smoke suite in CI within 2 weeks. Under 1 week: cut to Phases 1-5 minimal + one smoke test.
-
-## Group 4: Authentication
 
 **Q15. Auth approach**:
 - Real UI login in a setup step, session reused across tests
