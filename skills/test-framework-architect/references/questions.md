@@ -11,6 +11,7 @@ Defaults apply when the user says "not sure" / "recommend". Always flag them REV
 
 **Q2. Tech stack under test** (multi-select): React/Vue/Angular SPA / Server-rendered web (Rails, Django, Laravel, .NET MVC) / REST API / GraphQL API / Native Android or iOS / Desktop (Electron, WPF, native) / Other
 - Default: SPA + REST API.
+- If the user is unsure whether the target has a UI, an API or both, do not guess: ask one plain follow-up ("Does it have a web page you log in to, an API you call, or both?") before Q15, and note that Step 0b will check it against the real repo.
 
 **Q3. Test volume**: ~under 100 / 100-500 / 500-2000 / 2000+ / Not sure
 - Default: plan for 100-300 in year one; structure must scale to 1000+.
