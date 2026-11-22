@@ -53,7 +53,7 @@ Defaults apply when the user says "not sure" / "recommend". Always flag them REV
 - If a mandated tool or style guide exists, ask the user to name it or point to the file.
 
 **Q14. First delivery target**: 1 week / 2 weeks / 4 weeks / 6+ weeks
-- Default: smoke suite in CI within 2 weeks. Under 1 week: cut to Phases 1-5 minimal + one smoke test.
+- Default: smoke suite in CI within 2 weeks. If the user picks "1 week", it means the first smoke suite in CI within a week, so ask once: keep all 8 phases (and treat Phases 6-8 as stretch) or cut to Phases 1-5 minimal + one smoke test. Record the answer. Only cut without asking if they say so.
 
 **Q15. Auth approach**:
 - Real UI login in a setup step, session reused across tests

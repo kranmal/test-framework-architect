@@ -38,7 +38,7 @@ Rules for intake:
 - If an answer is "not sure" / "recommend one", apply the default listed in `questions.md`, state it in one line, and mark it **REVISITABLE**.
 - Combinations are allowed (for example web + API). If the user selects mobile or desktop alongside web, recommend phasing: web and API first, mobile and desktop as a separate later package, and flag the scope risk.
 - The page and flow question (Q16) is **deferred**: do not ask it at intake. Ask it at the start of Phase 5 step 4, when it is needed.
-- After the last batch, check the answers for contradictions before moving on (for example Web with "GraphQL API only" when the target has no GraphQL endpoint, or mobile with no device plan). Name the mismatch and ask the user to resolve it.
+- After the last batch, check the answers for contradictions before moving on (for example Web with "GraphQL API only" when the target has no GraphQL endpoint, or mobile with no device plan). Name the mismatch and ask the user to resolve it. Intake cannot see the real target, so run the same check again after Step 0b (when you read the chosen repo) and Step 0c (when you reach the app), and correct earlier answers and `docs/decisions.md` if the target contradicts them.
 - Check for existing project context first (package.json, pyproject.toml, pom.xml, CI files, existing tests). Tell the user what you found and let it pre-fill answers, but confirm rather than assume.
 
 ### Step 0b: Choose the GitHub repository (only if Q8 is GitHub Actions)
@@ -80,7 +80,7 @@ Read `references/phases.md` for the full spec of each phase and `references/stac
 1. Present the plan.
 2. Get approval of the plan via AskUserQuestion (approve / adjust). If the user answers "adjust" or "needs changes" without saying what, ask one follow-up for what to change (free text) before revising. Do not guess.
 3. Produce the code or document.
-4. Make the last line of the message exactly `Ready to move to Phase N+1? Or would you like to adjust anything?` with no prefix, suffix or rewording (for example no "Once you approve:"). This line is the phase hand-off. Do not also ask the same question in a card; the user's reply to the line is the approval. Use a card only if you need structured choices (for example which adjustment).
+4. Make the last line of the message exactly `Ready to move to Phase N+1? Or would you like to adjust anything?` with no prefix, suffix or rewording (for example no "Once you approve:"). For Phase 8 there is no Phase 9, so the last line is exactly `Ready to write the final README? Or would you like to adjust anything?`. This line is the phase hand-off. Do not also ask the same question in a card; the user's reply to the line is the approval. Use a card only if you need structured choices (for example which adjustment).
 
 Phase 5 is split into 7 sub-steps (config, base fixtures, base page object, two page objects, data layer, reporting, logging). Confirm between each sub-step.
 
