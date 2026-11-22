@@ -38,6 +38,27 @@ Rules for intake:
 - The page and flow question (Q16) is **deferred**: do not ask it at intake. Ask it at the start of Phase 5 step 4, when it is needed.
 - Check for existing project context first (package.json, pyproject.toml, pom.xml, CI files, existing tests). Tell the user what you found and let it pre-fill answers, but confirm rather than assume.
 
+### Step 0b: Choose the GitHub repository (only if Q8 is GitHub Actions)
+
+Right after intake and before Phase 1, ask which repository the framework and its workflow will live in. Skip this step for any other CI answer.
+
+1. Gather options without changing anything:
+   - Current folder: run `git remote get-url origin`. If it points at GitHub, offer that repo first.
+   - Other repos: if `gh auth status` succeeds, run `gh repo list --limit 30` and offer the most relevant ones. If `gh` is missing or not signed in, say so and fall back to the user typing `OWNER/REPO`.
+2. Ask with AskUserQuestion (at most 4 options; the user can always choose "Other" to type `OWNER/REPO`):
+   - Use the current folder's repo (shown only when a GitHub remote exists, listed first and marked Recommended).
+   - Pick one of the listed existing repos.
+   - Create a new private repo.
+   - Decide later (build locally; ask again at Phase 7).
+3. Record the answer as a line in `docs/decisions.md` with the REVISITABLE flag. Use `OWNER/REPO` only; never record tokens.
+
+Rules for this step:
+- **Read-only until approved.** Listing repos is fine. Creating a repo, cloning, pushing, opening a PR, or setting Actions variables or secrets each need the user's explicit yes, one action at a time, naming the repo.
+- Recommend **private** for new repos, because Playwright traces can contain auth headers.
+- Never ask for, print or store a token or password. Secret values are entered by the user in GitHub's settings, or typed by them into `gh secret set` themselves.
+- If the chosen repo already has files, read them first and tell the user what you found, as in the project-context check above.
+- If a repo is chosen, Phase 7 targets it: the workflow lives in that repo's `.github/workflows/`, and the final README names it.
+
 ### Phases 1-8
 
 Read `references/phases.md` for the full spec of each phase and `references/stack-matrix.md` when choosing tools in Phase 2. For every phase:

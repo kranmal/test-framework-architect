@@ -5,6 +5,7 @@ A [Claude Code](https://claude.com/claude-code) skill that acts as a senior test
 ## What it does
 
 1. **Intake**: pick-list questions (app type, stack, language, team, OS, CI, integrations, compliance, environments, parallelism, standards, deadline, auth approach). "Not sure" gets a flagged, revisitable default.
+   If you pick GitHub Actions, it then asks which repository to use (the current folder's repo, one from `gh repo list`, a new private repo, or decide later). It only reads until you approve each action.
 2. **Eight approval-gated phases**:
    1. Requirements document (with Non-Goals)
    2. Tool selection (table with alternatives and trade-offs)
