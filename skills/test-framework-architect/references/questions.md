@@ -6,7 +6,7 @@ Defaults apply when the user says "not sure" / "recommend". Always flag them REV
 
 ## Group 1: Application and scope
 
-**Q1. Application type(s)** (multi-select): Web / API / Mobile (native or hybrid) / Desktop
+**Q1. Application type(s)** (multi-select, shown as four options because of the AskUserQuestion cap): Web / API / Mobile or Desktop (native, hybrid or installed program; asked which one as a plain follow-up) / Not sure
 - Default: Web + API. If the user is not sure what the target is, apply this default, flag it REVISITABLE, and use the plain follow-up under Q2 before Q15.
 - If more than web+API is chosen, recommend phasing (web+API first). Risk: mobile and desktop need different drivers (Appium, WinAppDriver, Playwright Electron) and device infrastructure.
 
