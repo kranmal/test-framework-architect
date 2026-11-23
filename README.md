@@ -2,6 +2,10 @@
 
 A [Claude Code](https://claude.com/claude-code) skill that acts as a senior test automation architect and pair programmer. It guides you through building a production-grade test automation framework **one approved step at a time**: it asks before it assumes, explains trade-offs, and writes runnable code into your repo.
 
+## Re-scan an existing framework
+
+Already have a framework? Ask it to re-scan. It lists what changed in the app, checks which changes your tests cover, tells you about the gaps in plain English, and offers to write the missing tests. It only reads until you say yes.
+
 ## What it does
 
 1. **Intake**: pick-list questions (app type, stack, language, team, OS, CI, integrations, compliance, environments, parallelism, standards, deadline, auth approach). "Not sure" gets a flagged, revisitable default.
@@ -90,6 +94,7 @@ skills/test-framework-architect/SKILL.md      operating rules and workflow
 skills/test-framework-architect/references/
   questions.md                                intake menus and defaults
   guidance.md                                 plain-English notes on what each choice allows
+  rescan.md                                   re-scan mode: find untested changes and offer to cover them
   phases.md                                   spec for each of the 8 phases
   stack-matrix.md                             tool recommendations by language
   ci-github-actions.yml                       verified CI template

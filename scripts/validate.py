@@ -65,6 +65,8 @@ for step in ("### Step 0b:", "### Step 0c:"):
 if "Step 0c" not in (skill_dir / "references" / "phases.md").read_text():
     fail("phases.md: Phase 5 must reference Step 0c")
 
+if "references/rescan.md" not in skill:
+    fail("SKILL.md must reference references/rescan.md")
 if "references/guidance.md" not in skill:
     fail("SKILL.md must reference references/guidance.md")
 questions = (skill_dir / "references" / "questions.md").read_text()
