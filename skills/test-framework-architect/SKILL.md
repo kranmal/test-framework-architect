@@ -38,6 +38,7 @@ Rules for intake:
 - If an answer is "not sure" / "recommend one", apply the default listed in `questions.md`, state it in one line, and mark it **REVISITABLE**.
 - Combinations are allowed (for example web + API). If the user selects mobile or desktop alongside web, recommend phasing: web and API first, mobile and desktop as a separate later package, and flag the scope risk.
 - The page and flow question (Q16) is **deferred**: do not ask it at intake. Ask it at the start of Phase 5 step 4, when it is needed.
+- After the last batch, read `references/guidance.md` and show the user a short "What your choices mean" list in plain English: for each option they chose, what it lets them do and what it rules out. Include only their choices, no jargon, one or two sentences each. Do not ask extra questions there.
 - After the last batch, check the answers for contradictions before moving on (for example Web with "GraphQL API only" when the target has no GraphQL endpoint, or mobile with no device plan). Name the mismatch and ask the user to resolve it. Intake cannot see the real target, so run the same check again after Step 0b (when you read the chosen repo) and Step 0c (when you reach the app), and correct earlier answers and `docs/decisions.md` if the target contradicts them.
 - Check for existing project context first (package.json, pyproject.toml, pom.xml, CI files, existing tests). Tell the user what you found and let it pre-fill answers, but confirm rather than assume.
 

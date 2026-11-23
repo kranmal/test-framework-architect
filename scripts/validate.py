@@ -65,6 +65,8 @@ for step in ("### Step 0b:", "### Step 0c:"):
 if "Step 0c" not in (skill_dir / "references" / "phases.md").read_text():
     fail("phases.md: Phase 5 must reference Step 0c")
 
+if "references/guidance.md" not in skill:
+    fail("SKILL.md must reference references/guidance.md")
 questions = (skill_dir / "references" / "questions.md").read_text()
 if "Q1 or Q2" not in questions or "REVISITABLE" not in questions.split("**Q2.")[0]:
     fail("questions.md: Q1 needs a default and the unsure follow-up must cover Q1 or Q2")
