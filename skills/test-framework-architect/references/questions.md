@@ -7,11 +7,12 @@ Defaults apply when the user says "not sure" / "recommend". Always flag them REV
 ## Group 1: Application and scope
 
 **Q1. Application type(s)** (multi-select): Web / API / Mobile (native or hybrid) / Desktop
+- Default: Web + API. If the user is not sure what the target is, apply this default, flag it REVISITABLE, and use the plain follow-up under Q2 before Q15.
 - If more than web+API is chosen, recommend phasing (web+API first). Risk: mobile and desktop need different drivers (Appium, WinAppDriver, Playwright Electron) and device infrastructure.
 
 **Q2. Tech stack under test** (multi-select): React/Vue/Angular SPA / Server-rendered web (Rails, Django, Laravel, .NET MVC) / REST API / GraphQL API / Native Android or iOS / Desktop (Electron, WPF, native) / Other
 - Default: SPA + REST API.
-- If the user is unsure whether the target has a UI, an API or both, do not guess: ask one plain follow-up ("Does it have a web page you log in to, an API you call, or both?") before Q15, and note that Step 0b will check it against the real repo.
+- If the user is unsure at Q1 or Q2 whether the target has a UI, an API or both, do not guess: ask one plain follow-up ("Does it have a web page you log in to, an API you call, or both?") before Q15, and note that Step 0b will check it against the real repo.
 
 **Q3. Test volume**: ~under 100 / 100-500 / 500-2000 / 2000+ / Not sure
 - Default: plan for 100-300 in year one; structure must scale to 1000+.
