@@ -5,6 +5,7 @@ A [Claude Code](https://claude.com/claude-code) skill that acts as a senior test
 ## What it does
 
 1. **Intake**: pick-list questions (app type, stack, language, team, OS, CI, integrations, compliance, environments, parallelism, standards, deadline, auth approach). "Not sure" gets a flagged, revisitable default.
+   Already have a framework? Ask it to re-scan: it lists what changed in the app, checks which changes your tests cover, tells you about the gaps in plain English, and offers to write the missing tests.
    After the questions it shows a short plain-English note on what your choices let you do and what they rule out.
    If you pick GitHub Actions, it then asks which repository to use (the current folder's repo, one from `gh repo list`, a new private repo, or decide later). It only reads until you approve each action.
 2. **Eight approval-gated phases**:
@@ -90,6 +91,7 @@ skills/test-framework-architect/SKILL.md      operating rules and workflow
 skills/test-framework-architect/references/
   questions.md                                intake menus and defaults
   guidance.md                                 plain-English notes on what each choice allows
+  rescan.md                                   re-scan mode: find untested changes and offer to cover them
   phases.md                                   spec for each of the 8 phases
   stack-matrix.md                             tool recommendations by language
   ci-github-actions.yml                       verified CI template

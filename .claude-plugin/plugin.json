@@ -1,6 +1,6 @@
 {
   "name": "test-framework-architect",
-  "version": "0.1.12",
+  "version": "0.1.13",
   "description": "Guided, approval-gated skill that helps you design and build a production-grade test automation framework in 8 phases.",
   "author": {
     "name": "Ketan Ranmal",
