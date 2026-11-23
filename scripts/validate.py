@@ -65,6 +65,10 @@ for step in ("### Step 0b:", "### Step 0c:"):
 if "Step 0c" not in (skill_dir / "references" / "phases.md").read_text():
     fail("phases.md: Phase 5 must reference Step 0c")
 
+questions = (skill_dir / "references" / "questions.md").read_text()
+if "Q1 or Q2" not in questions or "REVISITABLE" not in questions.split("**Q2.")[0]:
+    fail("questions.md: Q1 needs a default and the unsure follow-up must cover Q1 or Q2")
+
 # Every phase handoff line must be present in the phase spec
 phases = (skill_dir / "references" / "phases.md").read_text()
 if "Ready to move to Phase N+1? Or would you like to adjust anything?" not in phases:
